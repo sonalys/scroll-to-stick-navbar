@@ -8,7 +8,7 @@
 body {
     margin: 0;
     padding-top: 70;
-    min-width: 500px;
+    min-width: 750px;
     background-image: linear-gradient(103deg, #0bedac, #008e5d);
     display: flex;
     flex-direction: column;
@@ -17,6 +17,7 @@ body {
 
 #header {
     position: fixed;
+    left: 0;
     top: 0;
     align-items: center;
     display: flex;
@@ -91,7 +92,7 @@ body {
     background-position-x: 15%;
     background-position-y: center;
     animation: show-in 1s;
-    background-size: 30% auto;
+    background-size: 300px;
     background-image: url("https://dinheirocomvoce.com.br/listavip-dcv/assets/logo-dcv-2018-png.png");
 }
 
@@ -103,7 +104,7 @@ body {
 
     background-image: url("https://imagensemoldes.com.br/wp-content/uploads/2020/03/Figura-de-Cofrinho-de-Porco-PNG-1200x900.png");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: auto 100%;
     background-position-x: 85%;
 
     align-self: stretch;
@@ -141,7 +142,7 @@ p {
     background-image: url("https://cdn.icon-icons.com/icons2/1153/PNG/512/1486564179-finance-saving_81499.png");
     background-repeat: no-repeat;
     background-position-x: 15%;
-    background-position-y: bottom;
+    background-position-y: 107%;
     background-size: auto 60%;;
 }
 
@@ -172,7 +173,8 @@ input {
     border: 0;
     height: 23px;
     font-size: 1.2rem;
-    padding: 0px 0px 0 7px;
+    padding: 0px 0px 0px 7px;
+    margin-bottom: 1rem;
     border-bottom: black 1px solid;
 }
 
@@ -187,6 +189,7 @@ input:focus {
 
 label {
     font-size: 0.8rem;
+    user-select: none;
 }
 
 input.error + label {
@@ -199,7 +202,8 @@ input.error + label {
 
 input.error + .input-label-error {
     display: block;
-    margin: 2px 0 0 4px;
+    margin: -35px 0 0px 159px;
+    position: absolute;
 }
 
 .input-div {
@@ -207,11 +211,17 @@ input.error + .input-label-error {
 }
 
 button {
+    outline: none;
     border: none;
     border-radius: 5px;
     background-image: none;
     background-color: #cecaca;
     padding: 10px;
+}
+
+button:active {
+    filter: brightness(0.8);
+    transition-duration: .5s;
 }
 
 form {
