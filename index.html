@@ -13,7 +13,7 @@
         <div class="menu-item">Negocie sua dívida</div>
         <div class="menu-item">Blog</div>
         <div class="menu-item">Ajuda</div>
-        <div class="menu-item">
+        <div class="menu-item align-right">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path
               d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
@@ -22,50 +22,10 @@
         </div>
       </div>
     </div>
+    <div id="banner">
+      
+    </div>
   </body>
   <script>
-    // browser hardware acceleration
-    window.requestAnimationFrame =
-      window.requestAnimationFrame ||
-      window.webkitRequestAnimationFrame ||
-      window.mozRequestAnimationFrame;
-
-    var navbarAnimation = {
-      header: document.getElementById("header"),
-      main: document.getElementById("main"),
-      headerOffset: header.offsetTop,
-      sticky: false,
-      latestKnownScrollY: 0,
-    };
-
-    function navbarUpdate() {
-      navbarAnimation.latestKnownScrollY =
-        window.pageYOffset ||
-        window.scrollY ||
-        document.documentElement.scrollTop;
-
-      switch (true) {
-        case navbarAnimation.latestKnownScrollY >=
-          navbarAnimation.headerOffset && !navbarAnimation.sticky:
-          navbarAnimation.sticky = true;
-          navbarAnimation.header.classList.add("sticking");
-          navbarAnimation.header.classList.remove("removing");
-          break;
-        case navbarAnimation.latestKnownScrollY <
-          navbarAnimation.headerOffset && navbarAnimation.sticky:
-          navbarAnimation.sticky = false;
-          navbarAnimation.header.classList.remove("sticking");
-          navbarAnimation.header.classList.add("removing");
-          setTimeout(
-            (_) => navbarAnimation.header.classList.remove("removing"),
-            250
-          );
-          break;
-      }
-    }
-
-    window.addEventListener("scroll", (_) =>
-      requestAnimationFrame(navbarUpdate)
-    );
   </script>
 </html>
