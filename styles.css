@@ -17,11 +17,13 @@ body {
 
 #header {
     position: fixed;
-    left: 0;
     top: 0;
+    left: 0;
+    right: 0;
     align-items: center;
+    justify-content: space-between;
+    padding: 0 15% 0 15%;
     display: flex;
-    width: 100vw;
     height: 70px;
     z-index: 1340;
     background-color: white;
@@ -30,19 +32,12 @@ body {
 
 .menu {
     height: min-content;
-    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    margin-left: 15%;
-    margin-right: 5%;
+    justify-content: space-evenly;
     transition-property: margin-left;
     transition-duration: .25s;
     transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.menu-item:last-child {
-    margin-left: auto;
 }
 
 .menu-item {
