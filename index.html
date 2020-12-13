@@ -1,4 +1,8 @@
 <html>
+  <head>
+    <title>Minha marca</title>
+  </head>
+  <link rel="shortcut icon" href="./favicon.ico" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link
@@ -7,25 +11,68 @@
   />
   <body id="main">
     <div id="header">
-      <div class="menu">
-        <div class="menu-item">Empréstimos</div>
-        <div class="menu-item">Como Funciona</div>
-        <div class="menu-item">Negocie sua dívida</div>
-        <div class="menu-item">Blog</div>
-        <div class="menu-item">Ajuda</div>
-        <div class="menu-item align-right">
+      <ul class="menu">
+        <li class="menu-item">Empréstimos</li>
+        <li class="menu-item">Como Funciona</li>
+        <li class="menu-item">Negocie sua dívida</li>
+        <li class="menu-item">Blog</li>
+        <li class="menu-item">Ajuda</li>
+        <li class="menu-item">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path
               d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
             ></path>
           </svg>
         </div>
-      </div>
+      </ul>
     </div>
     <div id="banner">
-      
+      <div id="input-banner">
+        <h2>Cadastre-se já</h2>
+        <form>
+          <div class="input-div">
+            <label>CPF</label>
+            <input id="cpf" placeholder="000.000.000-00" maxlength="11" />
+            <label class="input-label-error">CPF Inválido</label>
+          </div>
+          <button>Cadastrar</button>
+        </form>
+      </div>
+    </div>
+    <div id="section1">
+      <h1>Como Funciona</h1>
+      <p>
+        Escolha o melhor plano de empréstimo<br>
+        Nos envie os seus dados<br>
+        Você recebe seu dinheiro na hora<br>
+      </p>
+    </div>
+    <div id="section2">
+      <h1>Negocie o parcelamento</h1>
+      <p>
+        Antecipando as parcelas do seu empréstimo,<br> é possível reduzir ainda mais
+        as taxas de juros!
+      </p>
     </div>
   </body>
   <script>
+    var cpf_input = document.getElementById("cpf");
+    cpf_input.addEventListener("keyup", e => {
+      var cpf = cpf_input.value.replaceAll(/\D/g, "");
+      var replace = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
+      console.log(cpf, replace);
+      cpf_input.value = replace;
+    });
+
+    cpf_input.addEventListener("focusout", e => {
+      if (cpf_input.value !== "" && !cpf_input.value.match(/\d{3}\.\d{3}.\d{3}-\d{2}/))
+        cpf_input.classList.add("error");
+      else
+        cpf_input.classList.remove("error");
+    });
+
+    cpf_input.addEventListener("focusin", e => {
+      cpf_input.classList.remove("error");
+    });
   </script>
 </html>
